@@ -1,0 +1,89 @@
+.tool__wrapper {
+    margin-top: 50px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+}
+
+.tool__header {
+    padding: 6px 24px 30px;
+}
+
+.tool__header__title {
+    font-weight: 600;
+    font-size  : 42px;
+    line-height: 52px;
+    color      : #33333b;
+    text-align : center;
+}
+
+.tool__header__subtitle {
+    text-align : center;
+    align-items: center;
+    max-width  : 800px;
+    margin     : 8px auto 0;
+    line-height: 32px;
+    font-size  : 22px;
+    font-weight: 400;
+    color      : #47474f;
+}
+
+.uploader {
+    display      : -ms-flexbox;
+    display      : flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap    : wrap;
+    margin-left  : auto;
+    margin-right : auto;
+    text-align   : center;
+    position     : relative;
+}
+
+.icon_btn{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+
+.uploader__btn {
+    margin: 20px;
+    display           : -ms-inline-flexbox;
+    display           : inline-flex;
+    -ms-flex-align    : center;
+    align-items       : center;
+    -ms-flex-pack     : center;
+    justify-content   : center;
+    min-height        : 80px;
+    min-width         : 330px;
+    -webkit-box-sizing: border-box;
+    box-sizing        : border-box;
+    padding           : 24px 48px;
+    font-weight       : 500;
+    font-size         : 24px;
+    background        : #e5322d;
+    line-height       : 28px;
+    vertical-align    : middle;
+    color             : #fff !important;
+    text-decoration   : none;
+    -webkit-transition: background-color .1s linear;
+    -o-transition     : background-color .1s linear;
+    transition        : background-color .1s linear;
+    border            : 0;
+    border-radius     : 12px;
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
+    box-shadow        : 0 3px 6px 0 rgba(0, 0, 0, .14);
+    -ms-flex-order    : 1;
+    order             : 1;
+    max-width         : 60vw;
+    margin: 0 auto 0;
+}
+
+
+.btn_process{
+    margin-top: 50px;
+}
+
+.btn_process .uploader__btn{
+    background-color: #47474f;
+
+}
