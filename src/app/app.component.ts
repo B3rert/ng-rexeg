@@ -68,6 +68,9 @@ export class AppComponent {
             }
           });
 
+
+          console.log(this.expresiones);
+          
           //Mensaje
           this._snackBar.open("Expresiones cargadas correctamente", "Aceptar", {
             duration: 5 * 1000,
@@ -119,7 +122,15 @@ export class AppComponent {
           const fileContent = e.target.result;
 
           // Divide el contenido del archivo en un arreglo por cada línea
-          this.cadenas = fileContent.split('\n');
+          this.cadenas =  fileContent.split('\n');
+
+
+          for (let i = 0; i < this.cadenas.length; i++) {
+            this.cadenas[i]  = this.cadenas[i].replace(/\r/g, '');
+          }
+
+          
+          
 
           this._snackBar.open("Cadenas cargadas correctamente", "Aceptar", {
             duration: 5 * 1000,
