@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AppComponent {
 
+  isLoading = false; //Pantalla de carga
+
   nameFileEntrada?: string; ///Nombre archvio de cadenas
   nameFileExpresiones?: string; //Nombre archivo de expresiones
 
@@ -23,6 +25,8 @@ export class AppComponent {
 
   //Procesar archivo de expresiones regulares
   onFileSelectedExpresion(event: any) {
+
+    this.isLoading = true;
     //Archivo seleccionado (Evento)
     const fileInput = event.target;
 
@@ -83,10 +87,15 @@ export class AppComponent {
 
     // Reinicia el input de archivo para permitir volver a seleccionar el mismo archivo
     fileInput.value = '';
+
+    this.isLoading = false;
+
   }
 
   //Procesar archivo de cadenas a evaluar
   onFileSelectedEntrada(event: any) {
+    this.isLoading = true;
+
 
     //limpiar cadenas si existe contenido previo
     this.cadenas = [];
@@ -130,12 +139,18 @@ export class AppComponent {
 
     // Reinicia el input de archivo para permitir volver a seleccionar el mismo archivo
     fileInput.value = '';
+
+    this.isLoading = false;
+
   }
 
 
 
   // Esta función evalúa cada string con las expresiones regulares y genera el archivo de salida
   validateStr() {
+
+    this.isLoading = true;
+
 
     //recorremos cada cadena encontrada en el archivo "Entrada.txt"
     this.cadenas.forEach(str => {
@@ -183,6 +198,9 @@ export class AppComponent {
 
     //Descarga el archivo de la url virtual
     window.URL.revokeObjectURL(url);
+
+    this.isLoading = false;
+
 
   }
 
