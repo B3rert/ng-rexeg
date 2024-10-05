@@ -65,12 +65,16 @@ export class AppComponent {
           });
 
           //Mensaje
-          this._snackBar.open("Expresiones cargadas correctamente");
+          this._snackBar.open("Expresiones cargadas correctamente", "Aceptar", {
+            duration: 5 * 1000,
+          });
 
 
         } catch (error) {
           //En caso de error mostar error
-          this._snackBar.open('Error al cargar el archivo');
+          this._snackBar.open('Error al cargar el archivo', "Aceptar", {
+            duration: 5 * 1000,
+          });
           console.error('Error al leer el archivo', error);
         }
       };
@@ -91,14 +95,14 @@ export class AppComponent {
     const fileInput = event.target;
     //Leer archivo
     const file = fileInput.files[0];
-    
+
     //si hay un archivo selecconado leerlo
     if (file) {
       //obtner y asignar nombre del archivo 
       this.nameFileEntrada = file.name;
       //Leer archivo
       const reader = new FileReader();
-      
+
       //leer contenido del arhivo 
       reader.onload = (e: any) => {
         try {
@@ -108,12 +112,16 @@ export class AppComponent {
           // Divide el contenido del archivo en un arreglo por cada línea
           this.cadenas = fileContent.split('\n');
 
-          this._snackBar.open("Cadenas cargadas correctamente");
+          this._snackBar.open("Cadenas cargadas correctamente", "Aceptar", {
+            duration: 5 * 1000,
+          });
 
 
         } catch (error) {
           //en caso de error mostrar mensaje
-          this._snackBar.open('Error al cargar el archivo');
+          this._snackBar.open('Error al cargar el archivo', "Aceptar", {
+            duration: 5 * 1000,
+          });
           console.error('Error al leer el archivo', error);
         }
       };
@@ -146,7 +154,7 @@ export class AppComponent {
           if (pattern.test(str)) {
             //si coincide, agregar a la lista de cadenas validadas
             this.results.push(`${str} - ${regex.name}`);
-            
+
             //Marca como valida la iteracion
             matched = true;
             break;  // Deja de comprobar con más expresiones si ya encontró una coincidencia
@@ -169,7 +177,7 @@ export class AppComponent {
     const a = document.createElement('a');
     a.href = url;
     a.download = 'resultados.txt';  // Nombre del archivo de salida
-    
+
     //simula click de descarga
     a.click();
 
