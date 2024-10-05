@@ -191,7 +191,7 @@ export class AppComponent {
     //Descargar el archivo
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'resultados.txt';  // Nombre del archivo de salida
+    a.download = 'Salida.txt';  // Nombre del archivo de salida
 
     //simula click de descarga
     a.click();
